@@ -1,2 +1,1267 @@
-# burille
-none
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Bernardo Burille - Médico Generalista | Passo Fundo - RS</title>
+    <meta name="description" content="Dr. Bernardo Burille - Médico Generalista formado pela Atitus Educação de Passo Fundo (RS). Atendimento integral para toda a família.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .logo-text h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .logo-text p {
+            color: #3b82f6;
+            font-weight: 500;
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="white" opacity="0.1"><polygon points="0,0 1000,0 1000,100 0,80"/></svg>');
+            background-size: cover;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text h2 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            margin-bottom: 32px;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: white;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 16px 32px;
+            border: 2px solid white;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #3b82f6;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .hero-badge {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background: white;
+            color: #1f2937;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .hero-badge i {
+            color: #3b82f6;
+            font-size: 2rem;
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 16px;
+        }
+
+        .section-title p {
+            font-size: 1.25rem;
+            color: #6b7280;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .about-features {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .feature-icon {
+            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+            color: #3b82f6;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .feature-content h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 8px;
+        }
+
+        .feature-content p {
+            color: #6b7280;
+        }
+
+        /* Specialties Grid */
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .specialty-card {
+            background: white;
+            padding: 32px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #f3f4f6;
+        }
+
+        .specialty-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .specialty-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .specialty-icon {
+            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+            color: #3b82f6;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .specialty-card h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .specialty-card p {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        /* Procedures Section */
+        .procedures-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .procedures-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        .procedure-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+        }
+
+        .procedure-item i {
+            color: #10b981;
+            font-size: 1.25rem;
+        }
+
+        .procedures-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        /* Detailed Conditions Section */
+        .conditions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+        }
+
+        .condition-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            border-left: 5px solid #3b82f6;
+        }
+
+        .condition-header {
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .condition-icon {
+            color: #3b82f6;
+            font-size: 1.5rem;
+        }
+
+        .condition-header h4 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .condition-content {
+            padding: 24px;
+        }
+
+        .condition-item {
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .condition-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .condition-item strong {
+            color: #1f2937;
+        }
+
+        /* Age Groups */
+        .age-groups {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .age-card {
+            background: white;
+            padding: 32px 24px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .age-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .age-card h4 {
+            color: #3b82f6;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .age-card p {
+            color: #6b7280;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Appointment Section */
+        .appointment {
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+        }
+
+        .appointment-card {
+            background: white;
+            padding: 48px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .appointment-icon {
+            background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+            color: #16a34a;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 24px;
+        }
+
+        .appointment-card h4 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 16px;
+        }
+
+        .appointment-card p {
+            color: #6b7280;
+            margin-bottom: 32px;
+            font-size: 1.1rem;
+        }
+
+        .appointment-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+            font-size: 0.9rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: #6b7280;
+        }
+
+        .info-item i {
+            color: #3b82f6;
+        }
+
+        /* Office Section */
+        .office-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .office-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .office-features {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .office-feature {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .office-feature i {
+            color: #3b82f6;
+            font-size: 1.5rem;
+            width: 24px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h5 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer-section p,
+        .footer-section div {
+            color: #d1d5db;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .footer-section i {
+            color: #3b82f6;
+            width: 20px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 30px;
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content,
+            .about-content,
+            .procedures-content,
+            .office-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-text h2 {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .specialties-grid,
+            .conditions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .age-groups {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Dr. Bernardo Burille</h1>
+                        <p>Médico Generalista</p>
+                    </div>
+                </div>
+                <a href="#" class="whatsapp-btn" onclick="openWhatsApp()">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Agendar Consulta</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2>Cuidando da sua saúde com excelência e dedicação</h2>
+                    <p>Médico generalista formado pela Atitus Educação de Passo Fundo (RS) em 2026. Oferecendo atendimento integral para toda a família com foco na prevenção e promoção da saúde.</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn-primary" onclick="openWhatsApp()">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Falar com Chaiane (Secretária)</span>
+                        </a>
+                        <a href="#about" class="btn-secondary">
+                            <i class="fas fa-calendar"></i>
+                            <span>Saiba Mais</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="images/medico-1.jpg" alt="Dr. Bernardo Burille">
+                    <div class="hero-badge">
+                        <i class="fas fa-award"></i>
+                        <div>
+                            <strong>Formado em 2026</strong>
+                            <p>Atitus Educação - Passo Fundo/RS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h3>Sobre o Dr. Bernardo Burille</h3>
+                <p>Médico generalista comprometido com a excelência no atendimento e o bem-estar dos pacientes</p>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="images/medico-2.jpg" alt="Dr. Bernardo em consulta">
+                </div>
+                <div class="about-features">
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Formação Acadêmica</h4>
+                            <p>Graduado em Medicina pela Atitus Educação de Passo Fundo (RS) em 2026, com formação sólida em medicina geral e foco no atendimento humanizado.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Filosofia de Atendimento</h4>
+                            <p>Acredito em uma medicina preventiva e humanizada, onde cada paciente é tratado de forma integral, considerando não apenas os sintomas, mas o bem-estar geral.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Medicina de Família</h4>
+                            <p>Especializado no atendimento de toda a família, desde recém-nascidos até idosos, proporcionando continuidade no cuidado e relacionamento duradouro.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialties Section -->
+    <section class="section" style="background: #f8fafc;">
+        <div class="container">
+            <div class="section-title">
+                <h3>Áreas de Atuação</h3>
+                <p>Como médico generalista, ofereço atendimento abrangente em diversas especialidades médicas</p>
+            </div>
+            <div class="specialties-grid">
+                <div class="specialty-card">
+                    <div class="specialty-header">
+                        <div class="specialty-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h4>Doenças Cardiovasculares</h4>
+                    </div>
+                    <p>Hipertensão, controle de colesterol, prevenção de doenças cardíacas e acompanhamento de condições cardiovasculares.</p>
+                </div>
+                <div class="specialty-card">
+                    <div class="specialty-header">
+                        <div class="specialty-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Diabetes e Endocrinologia</h4>
+                    </div>
+                    <p>Diagnóstico e controle do diabetes, distúrbios da tireoide, obesidade e síndrome metabólica.</p>
+                </div>
+                <div class="specialty-card">
+                    <div class="specialty-header">
+                        <div class="specialty-icon">
+                            <i class="fas fa-lungs"></i>
+                        </div>
+                        <h4>Doenças Respiratórias</h4>
+                    </div>
+                    <p>Gripes, resfriados, bronquite, pneumonia, asma e outras condições do sistema respiratório.</p>
+                </div>
+                <div class="specialty-card">
+                    <div class="specialty-header">
+                        <div class="specialty-icon">
+                            <i class="fas fa-thermometer-half"></i>
+                        </div>
+                        <h4>Doenças Infecciosas</h4>
+                    </div>
+                    <p>Infecções urinárias, de pele, DSTs, hepatites virais, dengue e outras doenças infecciosas.</p>
+                </div>
+                <div class="specialty-card">
+                    <div class="specialty-header">
+                        <div class="specialty-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4>Saúde Mental</h4>
+                    </div>
+                    <p>Ansiedade, depressão leve a moderada, transtornos do sono e promoção do bem-estar mental.</p>
+                </div>
+                <div class="specialty-card">
+                    <div class="specialty-header">
+                        <div class="specialty-icon">
+                            <i class="fas fa-bone"></i>
+                        </div>
+                        <h4>Doenças Musculoesqueléticas</h4>
+                    </div>
+                    <p>Dores nas costas, artrite, artrose, tendinites, fibromialgia e lesões esportivas leves.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Procedures Section -->
+    <section class="section">
+        <div class="container">
+            <div class="procedures-content">
+                <div>
+                    <h3 style="font-size: 2.5rem; font-weight: 700; color: #1f2937; margin-bottom: 24px;">Procedimentos Realizados</h3>
+                    <p style="font-size: 1.25rem; color: #6b7280; margin-bottom: 32px;">Realizo diversos procedimentos médicos básicos e diagnósticos, sempre priorizando a segurança e o conforto do paciente.</p>
+                    <div class="procedures-list">
+                        <div class="procedure-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Consultas médicas completas</span>
+                        </div>
+                        <div class="procedure-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Exames físicos detalhados</span>
+                        </div>
+                        <div class="procedure-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Eletrocardiograma (ECG)</span>
+                        </div>
+                        <div class="procedure-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Sutura de ferimentos</span>
+                        </div>
+                        <div class="procedure-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Curativos e tratamento de feridas</span>
+                        </div>
+                        <div class="procedure-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Aplicação de vacinas</span>
+                        </div>
+                        <div class="procedure-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Infiltrações articulares</span>
+                        </div>
+                        <div class="procedure-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Remoção de pontos</span>
+                        </div>
+                        <div class="procedure-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Drenagem de abscessos simples</span>
+                        </div>
+                        <div class="procedure-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Orientação preventiva</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="procedures-image">
+                    <img src="images/medico-3.jpg" alt="Procedimentos médicos">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Age Groups Section -->
+    <section class="section" style="background: linear-gradient(135deg, #dbeafe, #bfdbfe);">
+        <div class="container">
+            <div class="section-title">
+                <h3>Atendimento por Faixa Etária</h3>
+                <p>Cuidado médico especializado para cada fase da vida</p>
+            </div>
+            <div class="age-groups">
+                <div class="age-card">
+                    <h4>Pediatria Básica</h4>
+                    <p>Puericultura, vacinação infantil, doenças comuns da infância e acompanhamento do desenvolvimento.</p>
+                </div>
+                <div class="age-card">
+                    <h4>Medicina do Adolescente</h4>
+                    <p>Acompanhamento puberal, orientação sexual, prevenção de DSTs e saúde mental do adolescente.</p>
+                </div>
+                <div class="age-card">
+                    <h4>Medicina do Adulto</h4>
+                    <p>Medicina ocupacional, saúde reprodutiva, prevenção de doenças crônicas e gerenciamento do estresse.</p>
+                </div>
+                <div class="age-card">
+                    <h4>Geriatria Básica</h4>
+                    <p>Avaliação geriátrica, prevenção de quedas, controle de medicamentos e manutenção da capacidade funcional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Conditions Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h3>O que um Médico Generalista Trata</h3>
+                <p>Como médico generalista, tenho capacidade para diagnosticar, tratar e acompanhar uma ampla variedade de condições médicas, oferecendo cuidado integral e coordenado.</p>
+            </div>
+            <div class="conditions-grid">
+                <div class="condition-card">
+                    <div class="condition-header">
+                        <i class="fas fa-heartbeat condition-icon"></i>
+                        <h4>Doenças Cardiovasculares</h4>
+                    </div>
+                    <div class="condition-content">
+                        <div class="condition-item">
+                            <strong>• Hipertensão arterial:</strong> Diagnóstico, controle e prevenção de complicações
+                        </div>
+                        <div class="condition-item">
+                            <strong>• Doenças cardíacas iniciais:</strong> Identificação precoce e acompanhamento
+                        </div>
+                        <div class="condition-item">
+                            <strong>• Controle de colesterol:</strong> Manejo da dislipidemia e prevenção cardiovascular
+                        </div>
+                        <div class="condition-item">
+                            <strong>• Prevenção coronariana:</strong> Avaliação de fatores de risco e orientação preventiva
+                        </div>
+                    </div>
+                </div>
+
+                <div class="condition-card">
+                    <div class="condition-header">
+                        <i class="fas fa-chart-line condition-icon"></i>
+                        <h4>Diabetes e Endocrinologia</h4>
+                    </div>
+                    <div class="condition-content">
+                        <div class="condition-item">
+                            <strong>• Diabetes mellitus:</strong> Diagnóstico, controle glicêmico e prevenção de complicações
+                        </div>
+                        <div class="condition-item">
+                            <strong>• Obesidade:</strong> Avaliação nutricional e plano de emagrecimento
+                        </div>
+                        <div class="condition-item">
+                            <strong>• Distúrbios da tireoide:</strong> Hipotireoidismo, hipertireoidismo e nódulos
+                        </div>
+                        <div class="condition-item">
+                            <strong>• Síndrome metabólica:</strong> Abordagem integral dos fatores de risco
+                        </div>
+                    </div>
+                </div>
+
+                <div class="condition-card">
+                    <div class="condition-header">
+                        <i class="fas fa-lungs condition-icon"></i>
+                        <h4>Doenças Respiratórias</h4>
+                    </div>
+                    <div class="condition-content">
+                        <div class="condition-item">
+                            <strong>• Infecções respiratórias:</strong> Gripes, resfriados, sinusites e faringites
+                        </div>
+                        <div class="condition-item">
+                            <strong>• Bronquite e pneumonia:</strong> Diagnóstico e tratamento adequado
+                        </div>
+                        <div class="condition-item">
+                            <strong>• Asma:</strong> Controle e acompanhamento da doença crônica
+                        </div>
+                        <div class="condition-item">
+                            <strong>• Rinite alérgica:</strong> Manejo de sintomas e prevenção de crises
+                        </div>
+                    </div>
+                </div>
+
+                <div class="condition-card">
+                    <div class="condition-header">
+                        <i class="fas fa-brain condition-icon"></i>
+                        <h4>Saúde Mental</h4>
+                    </div>
+                    <div class="condition-content">
+                        <div class="condition-item">
+                            <strong>• Ansiedade:</strong> Diagnóstico e tratamento de transtornos ansiosos leves a moderados
+                        </div>
+                        <div class="condition-item">
+                            <strong>• Depressão:</strong> Identificação precoce e acompanhamento terapêutico
+                        </div>
+                        <div class="condition-item">
+                            <strong>• Transtornos do sono:</strong> Insônia, apneia e outros distúrbios do sono
+                        </div>
+                        <div class="condition-item">
+                            <strong>• Síndrome do pânico:</strong> Manejo inicial e orientação especializada
+                        </div>
+                    </div>
+                </div>
+
+                <div class="condition-card">
+                    <div class="condition-header">
+                        <i class="fas fa-thermometer-half condition-icon"></i>
+                        <h4>Doenças Infecciosas</h4>
+                    </div>
+                    <div class="condition-content">
+                        <div class="condition-item">
+                            <strong>• Infecções urinárias:</strong> Cistite, pielonefrite e infecções recorrentes
+                        </div>
+                        <div class="condition-item">
+                            <strong>• Infecções de pele:</strong> Celulite, impetigo e outras infecções cutâneas
+                        </div>
+                        <div class="condition-item">
+                            <strong>• DSTs:</strong> Diagnóstico, tratamento e orientação preventiva
+                        </div>
+                        <div class="condition-item">
+                            <strong>• Hepatites virais:</strong> Acompanhamento e monitoramento
+                        </div>
+                    </div>
+                </div>
+
+                <div class="condition-card">
+                    <div class="condition-header">
+                        <i class="fas fa-pills condition-icon"></i>
+                        <h4>Doenças Gastrointestinais</h4>
+                    </div>
+                    <div class="condition-content">
+                        <div class="condition-item">
+                            <strong>• Gastrite e úlcera:</strong> Diagnóstico e tratamento com erradicação do H. pylori
+                        </div>
+                        <div class="condition-item">
+                            <strong>• Refluxo gastroesofágico:</strong> Manejo clínico e orientação dietética
+                        </div>
+                        <div class="condition-item">
+                            <strong>• Síndrome do intestino irritável:</strong> Controle de sintomas e qualidade de vida
+                        </div>
+                        <div class="condition-item">
+                            <strong>• Constipação e diarreia:</strong> Investigação e tratamento das causas
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 60px; text-align: center;">
+                <div style="background: linear-gradient(135deg, #dbeafe, #bfdbfe); padding: 40px; border-radius: 20px; max-width: 800px; margin: 0 auto;">
+                    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
+                        <i class="fas fa-hand-holding-heart" style="font-size: 3rem; color: #3b82f6;"></i>
+                    </div>
+                    <h4 style="font-size: 2rem; font-weight: 700; color: #1f2937; margin-bottom: 16px;">Atendimento Integral e Humanizado</h4>
+                    <p style="font-size: 1.1rem; color: #6b7280; line-height: 1.6;">
+                        Como médico generalista, meu papel vai além do diagnóstico e tratamento. Atuo como coordenador 
+                        do seu cuidado, estabelecendo uma relação de confiança e oferecendo orientação contínua para 
+                        a manutenção da sua saúde e bem-estar. Quando necessário, faço encaminhamentos para especialistas, 
+                        sempre mantendo o acompanhamento e a continuidade do cuidado.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section class="section appointment">
+        <div class="container">
+            <div class="section-title">
+                <h3>Agende sua Consulta</h3>
+                <p>Entre em contato conosco através do WhatsApp. Nossa simpática secretária Chaiane estará pronta para atendê-lo e agendar sua consulta.</p>
+            </div>
+            <div class="appointment-card">
+                <div class="appointment-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <h4>Fale com a Chaiane</h4>
+                <p>Nossa secretária está disponível para agendar sua consulta e esclarecer dúvidas</p>
+                <a href="#" class="btn-primary" onclick="openWhatsApp()" style="font-size: 1.2rem; padding: 20px 40px;">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Agendar pelo WhatsApp</span>
+                </a>
+                <div class="appointment-info">
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Seg-Sex: 8h às 18h</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <span>Resposta rápida</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-calendar"></i>
+                        <span>Agendamento fácil</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Office Section -->
+    <section class="section">
+        <div class="container">
+            <div class="office-content">
+                <div class="office-image">
+                    <img src="images/consultorio.jpg" alt="Consultório Dr. Bernardo Burille">
+                </div>
+                <div>
+                    <h3 style="font-size: 2.5rem; font-weight: 700; color: #1f2937; margin-bottom: 24px;">Nosso Consultório</h3>
+                    <p style="font-size: 1.25rem; color: #6b7280; margin-bottom: 32px;">
+                        Ambiente moderno, acolhedor e equipado com tecnologia de ponta para oferecer 
+                        o melhor atendimento médico em Passo Fundo.
+                    </p>
+                    <div class="office-features">
+                        <div class="office-feature">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Passo Fundo - Rio Grande do Sul</span>
+                        </div>
+                        <div class="office-feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Ambiente seguro e higienizado</span>
+                        </div>
+                        <div class="office-feature">
+                            <i class="fas fa-clock"></i>
+                            <span>Horários flexíveis de atendimento</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                        <div style="background: #3b82f6; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            <i class="fas fa-stethoscope"></i>
+                        </div>
+                        <div>
+                            <h5>Dr. Bernardo Burille</h5>
+                            <p style="color: #9ca3af; margin: 0;">Médico Generalista</p>
+                        </div>
+                    </div>
+                    <p>Cuidando da sua saúde com excelência, dedicação e humanização. Formado pela Atitus Educação de Passo Fundo (RS).</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h5>Contato</h5>
+                    <div>
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp: Fale com Chaiane</span>
+                    </div>
+                    <div>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Passo Fundo - RS</span>
+                    </div>
+                    <div>
+                        <i class="fas fa-envelope"></i>
+                        <span>contato@drbernardo.com.br</span>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h5>Horários</h5>
+                    <p>Segunda a Sexta: 8h às 18h</p>
+                    <p>Sábado: 8h às 12h</p>
+                    <p>Domingo: Fechado</p>
+                    <p style="color: #25d366; margin-top: 16px;">Agendamentos pelo WhatsApp</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2024 Dr. Bernardo Burille - Médico Generalista. Todos os direitos reservados.</p>
+                <p style="font-size: 0.9rem; margin-top: 8px;">CRM/RS: XXXXX | Formado pela Atitus Educação - Passo Fundo/RS (2026)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // WhatsApp function
+        function openWhatsApp() {
+            const phoneNumber = "5554999999999"; // Número fictício para demonstração
+            const message = "Olá! Gostaria de agendar uma consulta com o Dr. Bernardo Burille.";
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'white';
+                header.style.backdropFilter = 'none';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.specialty-card, .condition-card, .age-card, .feature').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Loading state for WhatsApp button
+        function showLoading(button) {
+            const originalText = button.innerHTML;
+            button.innerHTML = '<div class="loading"></div> Abrindo WhatsApp...';
+            button.disabled = true;
+            
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.disabled = false;
+            }, 2000);
+        }
+
+        // Add loading to WhatsApp buttons
+        document.querySelectorAll('.whatsapp-btn, .btn-primary').forEach(btn => {
+            btn.addEventListener('click', function() {
+                showLoading(this);
+            });
+        });
+    </script>
+</body>
+</html>
+
